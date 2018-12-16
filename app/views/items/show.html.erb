@@ -4,17 +4,19 @@
   <b><%= @item.price.to_s %>€</b>
   <br>
   <hr id="item-hr">
-  <div class="item-description">
-    <h4 style="text-align: left">Ingredienti:</h4>
-    <ul class="item-doses-list">
-      <% @item.recepy.each do |recepy| %>
-        <li><%=recepy%></li>
-      <% end %>
-    </ul>
-  </div>
+  <% unless @item.recepy.empty? %>
+    <div class="item-description">
+      <h4 style="text-align: left">Ingredienti:</h4>
+      <ul class="item-doses-list">
+        <% @item.recepy.each do |recepy| %>
+          <li><%= recepy %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="item-navigation">
-    <% caption = @item.category.id-1 == 0 ? "Sfoglia altri piatti" : "Sfoglia altre bevande" %>
-    <%= link_to caption, item_category_url(@item.category.id-1), id: "navigation-button" %>
+    <% caption = @item.category.id - 1 == 0 ? "Sfoglia altri piatti" : "Sfoglia altre bevande" %>
+    <%= link_to caption, item_category_url(@item.category.id - 1), id: "navigation-button" %>
   </div>
   <hr>
 </div>
