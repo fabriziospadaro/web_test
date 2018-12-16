@@ -16,6 +16,12 @@ class Item < ApplicationRecord
   end
 
   def photo_url
-    return "https://res.cloudinary.com/dhsmfbjzf/"+ (photo.identifier || "")
+    return "https://res.cloudinary.com/dhsmfbjzf/" + (photo.identifier || "")
+  end
+
+  def self.by_tag(tag)
+    id = Tag.find_by(name: tag)&.id
+    return self.all if tag == "Tutti" || id.nil?
+    return self.all.select {|item| item.tags.include?(id)}
   end
 end

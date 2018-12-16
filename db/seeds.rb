@@ -2,10 +2,20 @@ require 'open-uri'
 #create admin
 Admin.create!(email: "bagiotto@brothers.com", password: "BbrothersPub", password_confirmation: "BbrothersPub")
 
-categories = ["Cibo", "Bevanda"]
+categories = ["Piatto", "Bevanda"]
 p "Initialized category: #{categories}"
 categories.each do |category|
   Category.create!(name: category) unless Category.find_by(name: category)
+end
+
+tags_piatti = ["Tutti","Stuzzicheria","Hamburger","Hot Dog","Ciabattine","Piadine","Crostoni","Pagnotte","Pucce","Terrine","Carpaccio","Tartare e Tataki","Carne","Insalate","Taglieri","Aperitivo"]
+tags_drinks = ["Tutti","Drinks","Birre alla spina","Birre in bottiglia"]
+
+tags_piatti.each do |tag|
+  Tag.create(name: tag, category_id: 1)
+end
+tags_drinks.each do |tag|
+  Tag.create(name: tag, category_id: 2)
 end
 
 p "Initialized ingredients"

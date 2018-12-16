@@ -1,9 +1,17 @@
 <div class="item-container">
   <% caption = (@category == 0 ? "I nostri piatti" : "Le nostre bevande") %>
   <h1><%= caption %></h1>
+
+  <%= form_tag(item_category_url(@category), method: "get") do %>
+    <%= label_tag("Filtra per: ") %>
+    <%= hidden_field_tag :category, @category %>
+    <%= select_tag "tags", options_for_select(Tag.where(category_id: (@category + 1)).map {|tag| tag.name}), :onchange => "this.form.submit();" %>
+  <% end %>
+
+  <hr>
   <div class="row">
     <% @items.each do |item| %>
-      <% next if item.category.id-1 != @category %>
+      <% next if item.category.id - 1 != @category %>
       <div class="col-xs-6 col-sm-4 col-md-3">
         <div class="card" style="background-image: linear-gradient(rgba(208, 126, 213, 0.15), rgba(59, 43, 15, 0.42)), url('<%= item.photo_url %>');">
           <div class="card-description">

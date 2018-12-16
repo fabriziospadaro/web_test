@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
   before_action :authenticate_admin!, :except => [:index, :show]
 
   def index
-    @items = Item.all
+    tag = params["tags"] || "Tutti"
+    @items = Item.by_tag(tag)
     @category = params["category"].to_i
   end
 
@@ -16,6 +17,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @item.tags = params["item"]["tags"].reject { |c| c.empty? }
     if @item.save
       redirect_to edit_item_path(@item)
     else
@@ -31,6 +33,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
+    @item.tags = params["item"]["tags"].reject { |c| c.empty? }
     @item.save
 
     redirect_to edit_item_path
