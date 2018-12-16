@@ -1,0 +1,37 @@
+// Import your components CSS files here.
+@import "alert";
+@import "navbar";
+@import "banner";
+@import "card";
+
+.item-container{
+  margin-top: 105px;
+  text-align: center;
+  h1{
+    margin-bottom: 50px;
+  }
+}
+.list-container{
+  padding: 30px;
+  display: flex;
+}
+.col-xs-6 {
+  padding-bottom: 20px;
+}
+.col-sm-5 {
+  padding-bottom: 20px;
+}
+.col-md-5 {
+  padding-bottom: 20px;
+}
+.center-items-container{
+  position: absolute;
+  left: 50%; /* relative to nearest positioned ancestor or body element */
+  top: 50%; /*  relative to nearest positioned ancestor or body element */
+  transform: translate(-50%, -50%); /* relative to element's height & width */
+  width: 90%;
+}
+.row {
+  margin-left: 34px;
+  margin-right: 34px;
+}

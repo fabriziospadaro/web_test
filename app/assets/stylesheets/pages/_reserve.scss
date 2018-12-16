@@ -1,0 +1,28 @@
+.create-reservation{
+  display: flex;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.034);
+  margin: auto;
+  margin-top: 70px;
+  padding: 20px;
+  border-radius: 4px;
+  justify-content: center;
+}
+
+.info-field{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.reserve-btn{
+  display: table;
+  margin: 0 auto;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+#title{
+  padding-top: 20px;
+  text-align: center;
+}

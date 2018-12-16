@@ -1,0 +1,25 @@
+<div class="item-container">
+  <h2 id="title">Prenota un tavolo</h2>
+
+  <div class="create-reservation">
+    <%= form_tag("/send_reservation", method: "post") do %>
+      <div class="info-field">
+        Identificativo (Nome e Cognome): *<%= text_field_tag :user %>
+      </div>
+      <div class="info-field">
+        In quanti siete? *<%= number_field(:peoples, in: 2.0..20.0, step: 1) %>
+      </div>
+      <div class="info-field">
+        Numero di cellulare per confermare la prenotazione * <%= text_field_tag :phone %>
+      </div>
+      <div class="info-field">
+        Quando vuoi prenotare il tavolo? *<%= date_field(:reservation_date, value: Time.now.strftime('%Y-%m-%d')) %>
+        A che ora?* <%= time_field :reservation_time, value: Time.now %>
+      </div>
+      <div class="reserve-btn">
+        <%= submit_tag("Prenota", id: "ctrl-button") %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

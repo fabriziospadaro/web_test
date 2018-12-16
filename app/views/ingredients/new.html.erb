@@ -1,0 +1,11 @@
+<div class="item-container">
+  <div class="create-item">
+    <div class="col-md-8 col-md-offset-2">
+      <h1>Aggiungi un' ingradiente</h1>
+      <%= simple_form_for @ingredient do |f| %>
+        <%= f.input :name %>
+        <%= f.button :submit, id: "ctrl-button" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,231 @@
+// Specific CSS for your home-page
+$nav-bar-size: 80px;
+
+.nav-bar {
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  background-color: rgba(0, 0, 0, 1);
+  height: $nav-bar-size;
+  text-align: center;
+  color: white;
+  box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.35);
+  z-index: 2;
+}
+.home-container{
+  a:hover {
+    margin-top: 20px;
+    color: white;
+    border-bottom: 4px solid white;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.choice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.drink {
+  text-align: center;
+  width: 100vw;
+  height: 50vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0) 59%, rgba(187, 131, 5, 0.32) 100%), image-url("drink.jpg") no-repeat center center fixed;
+  filter: sepia(30%);
+  background-size: cover;
+  z-index: -10;
+}
+
+.food {
+  text-align: center;
+  width: 100vw;
+  height: 50vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0) 59%, rgba(187, 131, 5, 0.32) 100%), image-url("food.jpeg") no-repeat center center fixed;
+  filter: sepia(30%);
+  background-size: cover;
+  z-index: -10;
+}
+
+#narvbar-link {
+  margin-top: 5px;
+  font-size: 24px;
+  font-family: 'Lato', sans-serif;
+  padding-left: 65px;
+  padding-right: 65px;
+}
+
+.logo-container {
+  position: fixed;
+  margin-top: 10px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: black;
+  border: 1px solid white;
+  width: 60px;
+  height: 60px;
+}
+
+.logo {
+  margin: auto;
+  margin-top: 10px;
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.text-banner-1 {
+  position: fixed;
+  width: 35vh;
+  filter: opacity(75%);
+  margin: auto;
+  left: -20px;
+  bottom: -20px;
+}
+
+.text-banner-2 {
+  position: fixed;
+  width: 35vh;
+  filter: opacity(75%);
+  margin: auto;
+  right: 0px;
+  bottom: 0px;
+}
+
+.footer {
+  clear: both;
+  position: fixed;
+  height: 40px;
+  margin-top: -40px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  display: flex;
+  padding: 6px;
+  padding-top: 20px;
+  font-size: 12px;
+  justify-content: center;
+  i {
+    padding-right: 3px;
+  }
+  a {
+    margin-right: 20px;
+    transition: 0.2s;
+    font-size: 15px;
+
+  }
+  a:hover {
+    margin-top: -9px;
+    color: white;
+    border-bottom: 3px solid white;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+  transition: 0.2s;
+}
+
+.last-item {
+  margin-left: auto;
+}
+
+#menu-toggle-btn {
+  position: absolute;
+  width: 60px;
+  right: 0px;
+  margin: 3px;
+  padding: 6px;
+  z-index: 10;
+  span {
+    display: block;
+    background: #ffffff;
+    height: 5px;
+    width: 36px;
+    margin: 7px;
+  }
+}
+
+.nav-bar-selection {
+  position: fixed;
+  top: 0px;
+  margin-top: $nav-bar-size;
+  background-color: rgba(0, 0, 0, 0.93);
+  height: 100%;
+  width: 100%;
+  z-index: 30;
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  padding-top: 180px;
+  p {
+    margin-top: 30px;
+  }
+  hr {
+    width: 80%;
+    border-width: 3px;
+  }
+}
+
+#menu-close-btn {
+  position: absolute;
+  width: 60px;
+  right: 0px;
+  margin: 3px;
+  padding: 6px;
+  padding-top: 40px;
+  z-index: 10;
+  span:first-child {
+    position: fixed;
+    display: block;
+    background: #ffffff;
+    height: 5px;
+    width: 36px;
+    margin: 7px;
+    margin-top: -15px;
+    transform: rotate(45deg);
+  }
+  span:nth-of-type(2) {
+    position: fixed;
+    display: block;
+    background: #ffffff;
+    height: 5px;
+    width: 36px;
+    margin: 7px;
+    margin-top: -15px;
+    transform: rotate(-45deg);
+  }
+}
+
+.logo-container-big {
+  position: fixed;
+  left: 50%;
+  margin-left: -50px;
+  margin-top: -165px;
+  border-radius: 50%;
+  background-color: black;
+  border: 1px solid white;
+  width: 100px;
+  height: 100px;
+}
+
+.logo-big {
+  margin: auto;
+  margin-top: 15px;
+  display: block;
+  width: 70px;
+  height: 70px;
+}
+
+.media-container{
+  display: flex;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  letter-spacing: 22px;
+  font-size: 42px;
+}

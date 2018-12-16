@@ -1,0 +1,6 @@
+<h3>Aggiungi un'ingrediente </h3>
+<%= simple_form_for [item, dose] do |f| %>
+  <%= f.association :ingredient, input_html: {class: "beautiful-dropdown"}, include_hidden: false %>
+  <%= f.input :description %>
+  <%= f.button :submit, id: "ctrl-button" %>
+<% end %>
