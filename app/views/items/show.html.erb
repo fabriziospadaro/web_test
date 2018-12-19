@@ -1,4 +1,8 @@
 <div class="item-container">
+  <% if (@is_admin) %>
+    <%= link_to "Modifica panino", edit_item_path(@item) , id: "navigation-button" %>
+    <%= link_to "Rimuovi panino", item_path, :method => 'delete', id: "navigation-button" %>
+  <% end %>
   <h2>#<%= @item.id.to_s + "  " + @item.name.capitalize %></h2>
   <div class="item-icon-big" style="background-image: linear-gradient(rgba(208, 126, 213, 0.15), rgba(59, 43, 15, 0.42)), url('<%= @item.photo_url %>');"></div>
   <b><%= @item.price.to_s %>€</b>

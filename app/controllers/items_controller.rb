@@ -9,15 +9,20 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @is_admin = admin_signed_in? && current_admin.email == "bagiotto@brothers.com"
   end
 
   def new
     @item = Item.new
   end
 
+  def destroy
+    Item.destroy(params["id"])
+  end
+
   def create
     @item = Item.new(item_params)
-    @item.tags = params["item"]["tags"].reject { |c| c.empty? }
+    @item.tags = params["item"]["tags"].reject {|c| c.empty?}
     if @item.save
       redirect_to edit_item_path(@item)
     else
@@ -33,7 +38,7 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @item.update(item_params)
-    @item.tags = params["item"]["tags"].reject { |c| c.empty? }
+    @item.tags = params["item"]["tags"].reject {|c| c.empty?}
     @item.save
 
     redirect_to edit_item_path

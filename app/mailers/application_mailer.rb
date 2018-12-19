@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "belva1234@gmail.com"
+  default from: "pubbrothers1@gmail.com"
   layout 'mailer'
 
   def reservation(params)
@@ -9,8 +9,6 @@ class ApplicationMailer < ActionMailer::Base
     data = params["reservation_date"].values[0]
     @time = params["reservation_time"].values[0]
     message = "#{@nominativo} ha richiesto una prenotazione il #{data} alle #{@time} per #{persone} persone. Numero di telefono: #{@telefono}"
-    raise
-    p message
-    mail(to: "belva1234@gmail.com", subject: "#{@nominativo} ha richiesto una prenotazione il #{data} alle #{@time} per #{persone} persone. Numero di telefono: #{@telefono}")
+    mail(to: "pubbrothers1@gmail.com", subject: message)
   end
 end
