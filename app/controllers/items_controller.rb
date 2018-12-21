@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
 
   def destroy
     Item.destroy(params["id"])
+    redirect_to item_category_path(0)
   end
 
   def create
@@ -47,7 +48,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :category_id, :photo, :remote_photo_url)
+    params.require(:item).permit(:name, :price, :category_id, :photo, :remote_photo_url,:order_id)
   end
 
   def authenticate_admin!

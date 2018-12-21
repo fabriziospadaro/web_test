@@ -26,4 +26,5 @@
     <% caption = @category != 0 ? "Sfoglia Piatti" : "Sfoglia Bevande" %>
     <%= link_to caption, item_category_url(Category.opposite_category(@category)), id: "navigation-button" %>
   </div>
+  <hr>
 </div>

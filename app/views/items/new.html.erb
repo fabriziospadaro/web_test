@@ -5,15 +5,17 @@
         <div class="col-md-8 col-md-offset-2">
           <h1>Aggiungi un panino</h1>
           <%= simple_form_for @item do |f| %>
-            <%= f.input :name %>
-            <%= f.input :price %>
-            <%= f.association :category, include_hidden: false %>
+            <%= f.input :name, :label => "Nome del panino" %>
+            <%= f.input :price, :label => "Prezzo"%>
+            <%= f.association :category, input_html: {class: "beautiful-dropdown"}, include_hidden: false, :label => "Categoria" %>
+            <%= f.label "Sotto categoria" %>
+            <br>
             <%= f.input_field :tags,collection: Tag.all, multiple: true %>
-
-            <%= f.input :photo %>
+            <%= f.input :order_id, :label => "Numero sul menù"%>
+            <%= f.input :photo , :label => "Immagine del panino"%>
             <%= f.input :photo_cache, as: :hidden %>
-            <%= f.input :remote_photo_url %>
-            <%= f.button :submit, id: "ctrl-button" %>
+            <%= f.input :remote_photo_url, :label => "Url immagine" %>
+            <%= f.button :submit, id: "ctrl-button", :label => "Crea" %>
           <% end %>
         </div>
       </div>
